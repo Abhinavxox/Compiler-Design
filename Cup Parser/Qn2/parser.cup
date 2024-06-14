@@ -1,0 +1,19 @@
+import java_cup.runtime.*;
+
+terminal ID, OB, CB, ADD, MIN, DIV, MUL;
+non terminal expr_list, e, t, f, tp, ep;
+
+start with expr_list
+
+expr_list ::= e {:System.out.println("Arthmetic operation valid");:}
+
+e ::= t ep 
+;
+ep ::= ADD t ep |  MIN t ep | 
+;
+t ::= f tp
+;
+tp ::= MUL f tp | DIV f tp |
+;
+f ::= OB e CB | ID
+;

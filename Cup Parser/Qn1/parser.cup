@@ -1,0 +1,15 @@
+import java_cup.runtime.*;
+
+terminal INT ID COMMA OB CB SC;
+non terminal expr_list, expr, list;
+
+start with expr_list;
+
+expr_list ::= INT ID OB INT expr list CB SC {: System.out.println("Function declaration recognized"); :}
+;
+
+expr ::= ID
+;
+
+list ::= COMMA INT expr list | 
+;
